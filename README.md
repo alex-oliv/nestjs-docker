@@ -41,6 +41,16 @@ $ docker build -t app-name
 $ docker run app-name
 ```
 
+```bash
+# Runnnig the docker-compose:
+$ docker-compose up
+```
+
+```bash
+# To add a new npm package:
+$ docker-compose up --build -V
+```
+
 ## Installation
 
 ```bash
