@@ -22,9 +22,24 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+# NestJS with Docker
+
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Containerizing our applications with Docker has many advantages:
+- The application will behave as expected regardless of the environment, and that it is possible to install all the external dependencies automatically when starting the application;
+- Docker images are easily deployable on platforms such as Heroku and work well with CI solutions like CircleCI;
+- Use the feature multi-stage build, that keeps the built production image as small as possible by keeping all the development dependencies in the intermediate layer;
+
+```bash
+# Building the imagem direct from Dockerfile:
+$ docker build -t app-name
+```
+
+```bash
+# Run the build image:
+$ docker run app-name
+```
 
 ## Installation
 
@@ -57,17 +72,3 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
