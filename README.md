@@ -27,29 +27,9 @@
 ## Description
 
 Containerizing our applications with Docker has many advantages:
-- The application will behave as expected regardless of the environment, and that it is possible to install all the external dependencies automatically when starting the application;
+- The application will behave as expected regardless of the environment, and that it is possible to install all the external dependencies automatically when starting the application, in this example we have Redis and Postgres;
 - Docker images are easily deployable on platforms such as Heroku and work well with CI solutions like CircleCI;
 - Use the feature multi-stage build, that keeps the built production image as small as possible by keeping all the development dependencies in the intermediate layer;
-
-```bash
-# Building the imagem direct from Dockerfile:
-$ docker build -t app-name
-```
-
-```bash
-# Run the build image:
-$ docker run app-name
-```
-
-```bash
-# Runnnig the docker-compose:
-$ docker-compose up
-```
-
-```bash
-# To add a new npm package:
-$ docker-compose up --build -V
-```
 
 ## Installation
 
@@ -70,15 +50,18 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## Docker Commands
 
 ```bash
-# unit tests
-$ npm run test
+# Building the imagem direct from Dockerfile
+$ docker build -t app-name
 
-# e2e tests
-$ npm run test:e2e
+# Run the build image
+$ docker run app-name
 
-# test coverage
-$ npm run test:cov
+# Runnnig the docker-compose
+$ docker-compose up
+
+# To add a new npm package
+$ docker-compose up --build -V
 ```
